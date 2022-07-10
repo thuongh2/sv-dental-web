@@ -1,0 +1,20 @@
+{% load static %}
+
+{% block carousel %}
+    <div class="carousel" data-flickity='{"cellAlign": "left", "contain": true ,"wrapAround": true , "autoPlay": true }'>
+
+        {% for post in posts %}
+            <div class="card">
+                <a href="/post/{{ post.slug }}">
+                    <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content| safe | truncatechars:150 }}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </a>
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
