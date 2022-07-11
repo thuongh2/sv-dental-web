@@ -15,13 +15,15 @@ def index(request):
         # check whether it's valid:
 
         if form.is_valid():
-            cc_myself = form.cleaned_data['email']
-            send_mail("Dây là mai test", 'Dây là mai test', 'hoaithuong.data@gmail.com', [cc_myself])
-            print('ok')
+            form.save()
+
+            #cc_myself = form.cleaned_data['email']
+            #send_mail("Dây là mai test", 'Dây là mai test', 'hoaithuong.data@gmail.com', [cc_myself])
+
     else:
         form = AppoinmentForm()
 
-    posts = Post.objects.all()[:6]
+    posts = Post.objects.filter(active= True, status= 1)
 
     context = {
         'posts': posts,
@@ -32,17 +34,15 @@ def index(request):
 
 
 def postDetail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+    post = get_object_or_404(Post, pk=pk, active= True, status= 1)
 
     context = {
         'post': post,
-
     }
-
     return render(request, "detail.html", context=context)
 
 def postDetailWithSlug(request, slug):
-    post = get_object_or_404(Post, slug=slug)
+    post = get_object_or_404(Post, slug=slug, active= True, status= 1)
 
     context = {
         'post': post,

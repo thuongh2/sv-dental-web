@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
-
+from django.utils.safestring import mark_safe
 # Register your models here.
 
 from .models import Category, Post, Appointment
@@ -20,7 +20,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('admin_photo', "title", "slug", "created_on", "status", "category", "active")
     list_filter = ("created_on", "active", "status")
     search_fields = ["title", "slug"]
-    readonly_fields = ['admin_photo']
+    readonly_fields = ('admin_photo', 'link_test',)
 
 
 class AppointmentAdmin(admin.ModelAdmin):

@@ -44,6 +44,9 @@ class Post(models.Model):
         if(self.image.url):
             return mark_safe('<img src="{}" width="100"/>'.format(self.image.url))
 
+    def link_test(self):
+        return mark_safe('<a class="btn btn-primary" href="/post/{}" role="button"  target="_blank">View Draft</a>'.format(self.slug))
+
     def __str__(self):
         return self.title
 
