@@ -1,20 +1,21 @@
 {% extends "base_generic.html" %}
 {% load static %}
+
 {% block content %}
-<div>
+    <div>
+        {% block customer_reviews %}
+            {% include "customer_reviews.html" %}
+        {% endblock %}
+    </div>
+    <div>
 
-{% block carousel %}
-    {% include "base/card.html" %}
-{% endblock %}
-</div>
+        {% block carousel %}
+            {% include "base/card.html" %}
+        {% endblock %}
+    </div>
 
-<div class="form">
-    <h2 class="text-center">ĐẶT LỊCH HẸN</h2>
-    <form class="form-appointment" action="/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
-</div>
+{#    {% block appointment %}#}
+{#        {% include "appointment.html" %}#}
+{#    {% endblock %}#}
 
 {% endblock %}

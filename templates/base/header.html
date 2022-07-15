@@ -10,11 +10,11 @@
                 <p>99 Cao Thắng, Phường 03, Quận 3, TP. Hồ Chí Minh</p>
             </div>
         </div>
-
         <div class="container">
             <div class="header-logo">
                 <a href="/">
-                    <img class="header-logo--sv" alt="main logo" src="{% static './image/logo (2).png' %}"/>
+                    <img class="header-logo--sv" alt="main logo"
+                         src="https://res.cloudinary.com/drg01iq3f/image/upload/v1657543961/carousel/logo-sv_lyg2yn.png"/>
                 </a>
             </div>
             <div class="header-menu">
@@ -43,11 +43,17 @@
                     <div class="header-menu-item">
                         <li>DỊCH VỤ KHÁC</li>
                     </div>
+                     <div class="header-menu-item">
+                         <li><a href="kien-thuc-nha-khoa">KIẾN THỨC NHA KHOA</a></li>
+                    </div>
                     <div class="header-menu-item">
                         <li>BẢNG GIÁ ƯU ĐÃI</li>
                     </div>
                     <div class="header-menu-item">
                         <li>KHÁCH HÀNG</li>
+                    </div>
+                      <div class="header-menu-item">
+                        <li>LIÊN HỆ</li>
                     </div>
                 </ul>
 
@@ -55,13 +61,13 @@
         </div>
     </div>
     <script>
-    $(".header-menu-icon").click(function () {
-        if ($("#header-menu-res").hasClass("active-header"))
-            $(".header-menu-ul").removeClass("active-header")
-        else
-            $(".header-menu-ul").addClass("active-header")
-    })
+        $(".header-menu-icon").click(function () {
+            if ($("#header-menu-res").hasClass("active-header"))
+                $(".header-menu-ul").removeClass("active-header")
+            else
+                $(".header-menu-ul").addClass("active-header")
+        })
 
 
-</script>
+    </script>
 {% endblock %}

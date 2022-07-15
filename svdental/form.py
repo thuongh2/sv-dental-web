@@ -6,7 +6,7 @@ class AppoinmentForm(forms.ModelForm):
 
     email = forms.EmailField(label="Email", max_length= 100)
 
-    phoneNumber = forms.CharField(max_length=200)
+    phoneNumber = forms.CharField(label="Số điện thoại", max_length=200)
 
     class Meta:
         model = Appointment

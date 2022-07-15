@@ -1,0 +1,25 @@
+{% load static %}
+
+{% block customer_reviews %}
+    <div class="list">
+        <h2 class="title-tag">CẢM NHẬN CỦA KHÁCH HÀNG SAU KHI SỬ DỤNG DỊCH VỤ TẠI NHA KHOA SV</h2>
+        <div class="carousel"
+             data-flickity='{"cellAlign": "left", "contain": true ,"wrapAround": true , "autoPlay": true }'>
+            {% for post in posts %}
+                <div class="card card-review ">
+                    <div class="card-body">
+                        <p class="card-text card-review-text">Lúc trước mất răng cô làm hàm tháo lắp, mà chỉ 1, 2 năm sau hàm nó lỏng
+                            lẻo, thức ăn mắc vào rất khó chịu. Bất tiện không thể xài được nữa, nên cô quyết định cấy
+                            Implant luôn.</p>
+                    </div>
+                    <img src="https://nhakhoaident.com/images/home/slider/chi-kieu-oanh.png" class="card-review-img--top" alt="...">
+                    <div>
+                        <p class="card-review--name">Nguyễn Văn A - Lập trình viên backend full stack</p>
+                        <p class="card-review--name card-review--sick">Trồng răng Implant - Cạo vôi răng</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

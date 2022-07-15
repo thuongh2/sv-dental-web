@@ -1,7 +1,15 @@
 {% extends "base_generic.html" %}
 
 {% load static %}
+{% block title %}
+    <title>{{ post.title }}</title>
+{% endblock %}
+
+
 {% block content %}
+    <div class="title-tag">
     {{ post.title }}
+    </div>
+
     {{ post.content | safe }}
 {% endblock %}
