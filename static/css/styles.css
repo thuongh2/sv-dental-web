@@ -20,12 +20,12 @@ a:hover {
 .wrapper {
     margin-right: auto; /* 1 */
     margin-left: auto; /* 1 */
-    margin-top: 20px;
 
     max-width: 1200px; /* 2 */
 
-    padding-right: 10px; /* 3 */
-    padding-left: 10px; /* 3 */
+    /* 3 */
+    /* 3 */
+    padding: 40px 10px;
 }
 
 .container {
@@ -35,6 +35,27 @@ a:hover {
 
 }
 
+/* INTRO */
+
+.intro{
+    display: flex;
+    justify-content: space-around;
+}
+
+.intro-content{
+    flex: 1;
+    text-align: justify;
+    margin-right: 30px;
+
+}
+
+.intro-content > p {
+    line-height: 1.6;
+}
+
+.intro-clip{
+    flex: 1;
+}
 /* INFO */
 
 .info {
@@ -79,6 +100,8 @@ a:hover {
 
 .header-menu-item:hover > .header-menu--sub {
     display: block !important;
+    visibility: visible;
+    opacity: 1;
 }
 
 
@@ -90,7 +113,8 @@ a:hover {
     top: 34px;
     width: 250px;
     background-color: #fff;
-    transition: all 0.5s ease-out;
+    transition: opacity 3s ease-out;
+    opacity: 0;
     list-style: none;
     padding: 0;
     z-index: 10;
@@ -140,6 +164,7 @@ header-menu--sub > li a {
     cursor: pointer;
     padding: 5px 8px;
     position: relative;
+    transition: visibility 0s, opacity 0.5s linear;
 
 }
 
@@ -163,11 +188,12 @@ header-menu--sub > li a {
 }
 
 .footer-hotline {
-    background-image: linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%);
+    background-image: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     padding: 20px;
+
 }
 
 .footer-hotline--item {
@@ -178,20 +204,36 @@ header-menu--sub > li a {
 .footer-hotline--item > p {
     font-weight: 700;
     text-align: center;
+    color: #025899 !important;
 }
 
-.footer-main {
+.footer-main{
     background-image: linear-gradient(to right, #F09819 0%, #EDDE5D 51%, #F09819 100%);
-
     width: 100%;
     display: flex;
     justify-content: space-around;
     padding: 20px;
 }
 
-.footer-main--icon > i {
-    font-size: 30px;
-    padding: 10px;
+.content-color *{
+    color: #0d6799;
+}
+
+/*.footer-main--icon {*/
+/*    font-size: 30px;*/
+/*    padding: 10px;*/
+/*}*/
+
+.footer-main--icon__image {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.footer-main--icon__bank {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
 }
 
 .footer-main--list {
@@ -199,14 +241,19 @@ header-menu--sub > li a {
     padding: 0;
 }
 
-.footer-main--list li a {
+.footer-main--list li {
     cursor: pointer;
+    padding: 3px 0;
+}
+
+.footer-main--list > li> a{
+    color: #0d6799 !important;
 }
 
 .footer-main--list li:hover {
     color: #0a6ebd;
     transform: translateX(5px);
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 
@@ -339,7 +386,7 @@ header-menu--sub > li a {
 .card-review-img--top {
     width: 100%;
     height: 150px;
-    transition: .3s;
+    transition: all .5s ease-in-out;
     object-fit: contain;
 }
 
@@ -372,7 +419,8 @@ header-menu--sub > li a {
     font-size: 30px;
     color: #025899;
     text-align: center;
-    margin: 5px 0;
+    margin: 10px 0;
+    position: relative;
 }
 
 .card-link {
@@ -486,14 +534,77 @@ header-menu--sub > li a {
     vertical-align: center;
 }
 
+/* SERVICE */
+.service {
+    padding: 20px 0;
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.service-list{
+    position: relative;
+    display: flex;
+
+}
+
+.service-list-item{
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.service-item--image{
+    width: 275px;
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.5s ease-out;
+    border: #0a6ebd solid 3px;
+    border-radius: 10px;
+}
+
+.service-item--image:hover{
+    transform: scale(1.05);
+}
+
+.service-item--title{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #025899;
+}
+
+
+.service::before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://res.cloudinary.com/drg01iq3f/image/upload/v1658217282/rvcontent/br-service_nc1pfp.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    opacity: 0.45;
+}
+
 
 /* MOBILE */
 
 @media only screen and (max-width: 1024px) {
+    .wrapper {
+        padding: 20px 10px;
+    }
+
     .header-menu-ul {
         display: none;
     }
-
 
     .header-menu--sub {
         position: relative;
@@ -584,5 +695,25 @@ header-menu--sub > li a {
         flex-direction: column;
     }
 
+    .service-list{
+        flex-direction: column;
+
+    }
+
+    .service-list-item {
+        margin: 5px;
+    }
+
+    .service-item--title{
+        margin: 5px;
+    }
+
+    .intro-content{
+        margin: 0;
+    }
+    .intro{
+        flex-direction: column;
+        text-align: center;
+}
 
 }

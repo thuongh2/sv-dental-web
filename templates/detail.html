@@ -5,11 +5,12 @@
     <title>{{ post.title }}</title>
 {% endblock %}
 
-
 {% block content %}
+    <div class="wrapper">
     <div class="title-tag">
-    {{ post.title }}
+        {{ post.title }}
     </div>
-
     {{ post.content | safe }}
+
+    </div>
 {% endblock %}
